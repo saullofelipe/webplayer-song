@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.music-plataform-textfield {
+    padding: 1rem;
+}
+
+
+#image-music {
+    border-radius: 50%;
+}
+
+.music-plataform-textfield span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h1 {
+    color: #1d1c1c;
+}
+
+.container-initial {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-plataform {
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-plataform-progess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.music-plataform-controls {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+.bi {
+    cursor: pointer;
+    color: #afacac;
+    font-size: 26px;
+    padding: 1rem;
+    transition-property: color;
+    transition-duration: 500ms;
+}
+
+.bi:hover {
+    color: #1d1c1c;
+}
+
+.bi-play, .bi-pause {
+    font-size: 38px;
+}
