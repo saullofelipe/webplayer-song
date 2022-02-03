@@ -6,7 +6,7 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .music-plataform-textfield {

@@ -5,7 +5,7 @@ const tracks = {
     }
 }
 
-const audioTrack = new Audio();
+const audioTrack = new Audio(tracks.musics[1].urlmusic);
 const playButton = document.getElementById('play');
 const nextButton = document.getElementById('next');
 import { isf, soundProperties } from './modules/player/client.js';
@@ -13,21 +13,22 @@ const sound = new soundProperties(audioTrack);
 let crnt_time = document.getElementById('current-time');
 
 audioTrack.addEventListener('canplay', function () {
+    crnt_time.textContent = sound.getCurrentTime()
     sound.setEvent("ready")
-    crnt_time.textContent = sound.getCurrentTime();
     document.getElementById('duration-time').textContent = sound.getDuration()
     document.getElementById('music-title').textContent = tracks.musics[1].title
     document.getElementById('image-music').src = tracks.musics[1].urlimg
 })
 
-audioTrack.addEventListener('ended', function () {
-    
+audioTrack.addEventListener('ended', function() {
+    sound.setEvent("ready")
+})
+
+audioTrack.addEventListener('timeupdate', function() {
+    crnt_time.textContent = sound.getCurrentTime()
 })
 
 audioTrack.addEventListener('play', async function () {
-    setInterval(() => {
-        crnt_time.textContent = sound.getCurrentTime();
-    }, 1000);
     const playIcon = document.querySelector('.bi-play');
     playIcon.classList.remove('bi-play');
     playIcon.classList.add('bi-pause');
@@ -59,3 +60,7 @@ playButton.addEventListener('click', async function () {
             throw new Error('O player não reconheceu o evento! Alguns dos motivos podem ser: Música (atual) não está pronta para ser tocada, o evento é desconhecido ou o retorno é inválido.')
     }
 })
+
+setTimeout(() => {
+    globalThis.renan;
+}, 1000);
